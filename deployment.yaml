@@ -53,6 +53,6 @@ spec:
   selector:
     app: nginx
   ports:
-  - port: 8001
+  - port: 8000
     targetPort: 80
-    nodePort: 30001
+    nodePort: 30000

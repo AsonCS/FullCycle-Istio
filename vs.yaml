@@ -1,4 +1,4 @@
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1
 kind: VirtualService
 metadata:
   name: nginx-vs
@@ -10,13 +10,15 @@ spec:
       - destination:
           host: nginx-service
           subset: v1
-        weight: 100
+        weight: 90
       - destination:
           host: nginx-service
           subset: v2
-        weight: 0
+        weight: 10
+
 ---
-apiVersion: networking.istio.io/v1alpha3
+
+apiVersion: networking.istio.io/v1
 kind: DestinationRule
 metadata:
   name: nginx-dr
